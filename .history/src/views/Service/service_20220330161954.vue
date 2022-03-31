@@ -15,7 +15,7 @@
             @click="changeLoginActive"
             :class="{ active: isLoginActive }"
           >
-            <router-link to="login">登录</router-link>
+            <router-link to="/login">登录</router-link>
           </div>
           <div
             class="box-nav-tab"

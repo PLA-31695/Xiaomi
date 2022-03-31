@@ -10,19 +10,11 @@
       <serveHeader />
       <div class="service-right-box">
         <div class="box-nav">
-          <div
-            class="box-nav-tab"
-            @click="changeLoginActive"
-            :class="{ active: isLoginActive }"
-          >
-            <router-link to="login">登录</router-link>
-          </div>
-          <div
-            class="box-nav-tab"
-            @click="changeResActive"
-            :class="{ active: isResActive }"
-          >
-            <router-link to="register">注册</router-link>
+          <div class="box-nav-tab" @click="changeLoginActive" :class="{active:isLoginActive}">
+           <a href="#">登录</a>
+            </div>
+          <div class="box-nav-tab" @click="changeResActive" :class="{active:isResActive}">
+            <a href="#">注册</a>
           </div>
         </div>
         <router-view></router-view>
@@ -34,20 +26,20 @@
 <script>
 import serveHeader from "@/components/Header/serve-header.vue";
 import Login from "@/components/Login/login.vue";
-import Register from "@/components/Register/register.vue";
+import Register from "@/components/Register/register.vue"
 export default {
   components: {
     serveHeader,
     Login,
-    Register,
+    Register
   },
   data() {
     return {
       Width: document.body.clientWidth, // 屏幕宽
       Height: document.body.clientHeight, // 屏幕高
       isShow: true,
-      isLoginActive: true,
-      isResActive: false,
+      isLoginActive:true,
+      isResActive:false,
     };
   },
   computed: {},
@@ -62,12 +54,15 @@ export default {
   },
   //方法集合
   methods: {
-    changeLoginActive() {
-      (this.isLoginActive = true), (this.isResActive = false);
+    changeLoginActive(){
+      this.isLoginActive = true,
+      this.isResActive = false
+
     },
-    changeResActive() {
-      (this.isResActive = true), (this.isLoginActive = false);
-    },
+    changeResActive(){
+      this.isResActive = true,
+      this.isLoginActive = false
+    }
   },
   created() {},
   mounted() {
@@ -105,20 +100,20 @@ export default {
     width: 70%;
     .service-right-box {
       width: 360px;
-      margin: 0 auto;
-      padding-top: 20px;
+      margin:0 auto;
+      padding-top:20px;
       .box-nav {
         height: 40px;
         .box-nav-tab {
           display: inline-block;
-          font-weight: 500;
+          font-weight:500;
           font-size: 22px;
           margin-left: 20px;
         }
-        .active {
-          color: #ff7e29;
-          padding-bottom: 10px;
-          border-bottom: 2px solid #ff7e29;
+        .active{
+          color:#ff7e29;
+          padding-bottom:10px;
+          border-bottom:2px solid #ff7e29;
         }
       }
     }

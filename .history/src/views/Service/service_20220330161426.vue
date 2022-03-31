@@ -15,14 +15,14 @@
             @click="changeLoginActive"
             :class="{ active: isLoginActive }"
           >
-            <router-link to="login">登录</router-link>
+            <router-link to="/login">登录</router-link>
           </div>
           <div
             class="box-nav-tab"
             @click="changeResActive"
             :class="{ active: isResActive }"
           >
-            <router-link to="register">注册</router-link>
+            <router-link to="/register">注册</router-link>
           </div>
         </div>
         <router-view></router-view>
